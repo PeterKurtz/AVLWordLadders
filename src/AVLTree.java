@@ -31,13 +31,14 @@ public class AVLTree<E extends Comparable<? super E>> {
         if (tree.left.left != null){
             tree.left = deleteMinRecursion(tree.left);
         }
-        if (tree.left.right == null) {
-            tree.left = null;
-        }
         else {
-            tree.left.left = tree.left.right;
+            if (tree.left.right == null) {
+                tree.left = null;
+            } else {
+                tree.left = tree.left.right;
+            }
         }
-        balance(tree);
+        tree = balance(tree);
         return tree;
     }
 
@@ -94,7 +95,10 @@ public class AVLTree<E extends Comparable<? super E>> {
     public void printTree(String label) {
         // TODO: Write some good stuff here
         System.out.println(label);
-        System.out.println(treeAsString(root, "", root.height));
+        String treeString = treeAsString(root, "", root.height);
+        treeString = treeString.substring(1, treeString.length() - 1);
+
+        System.out.println(treeString);
     }
 
     private String treeAsString(AvlNode node, String treeString, int fullHeight) {

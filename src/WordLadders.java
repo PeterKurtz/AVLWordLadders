@@ -67,6 +67,7 @@ public class WordLadders {
         primeTree.deleteMin();
         primeTree.printTree("The Tree after deleteMin");
 
+        /*
         System.out.println("-- Calling deleteMin on dwarfTree until it is empty");
         while (!dwarfTree.isEmpty()) {
             System.out.printf("%s\n", dwarfTree.deleteMin());
@@ -77,6 +78,6 @@ public class WordLadders {
             int max = primeTree.findMax(); //changed var to int
             System.out.printf("%d[%d] ", primeTree.deleteMin(), max);
         }
-        System.out.println();
+        System.out.println();*/
     }
 }
