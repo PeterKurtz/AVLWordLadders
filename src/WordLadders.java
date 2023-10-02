@@ -60,7 +60,6 @@ public class WordLadders {
         primeTree.printTree("Prime Tree");
         dwarfTree.printTree( "Dwarf Tree" );
 
-        /*
         System.out.println("\n\n-- Calling deleteMin on primeTree --");
         primeTree.deleteMin();
         primeTree.printTree("The Tree after deleteMin");
@@ -78,6 +77,6 @@ public class WordLadders {
             int max = primeTree.findMax(); //changed var to int
             System.out.printf("%d[%d] ", primeTree.deleteMin(), max);
         }
-        System.out.println();*/
+        System.out.println();
     }
 }

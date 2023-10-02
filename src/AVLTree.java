@@ -23,12 +23,30 @@ public class AVLTree<E extends Comparable<? super E>> {
     }
 
     public E deleteMin() {
-        // TODO: Write some good stuff here
+        root = deleteMinRecursion(root);
+        return findMin();
+    }
 
-        // Note: I only put this code here to have it compile.
-        // This will NOT work if root is null.  You should return
-        // the actual min value found.
-        return root.value;
+    private AvlNode deleteMinRecursion(AvlNode tree) {
+        if (tree.left.left != null){
+            tree.left = deleteMinRecursion(tree.left);
+        }
+        if (tree.left.right == null) {
+            tree.left = null;
+        }
+        else {
+            tree.left.left = tree.left.right;
+        }
+        balance(tree);
+        return tree;
+    }
+
+    public E findMin() {
+        if (isEmpty()) {
+            throw new RuntimeException();
+        }
+
+        return findMin(root).value;
     }
 
     /**
@@ -155,6 +173,17 @@ public class AVLTree<E extends Comparable<? super E>> {
 
         while (node.right != null) {
             node = node.right;
+        }
+        return node;
+    }
+
+    private AvlNode findMin(AvlNode node) {
+        if (node == null) {
+            return null;
+        }
+
+        while (node.left != null) {
+            node = node.left;
         }
         return node;
     }
