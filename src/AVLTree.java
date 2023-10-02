@@ -75,6 +75,22 @@ public class AVLTree<E extends Comparable<? super E>> {
      */
     public void printTree(String label) {
         // TODO: Write some good stuff here
+        System.out.println(label);
+        System.out.println(treeAsString(root, "", root.height));
+    }
+
+    private String treeAsString(AvlNode node, String treeString, int fullHeight) {
+        if (node == null) {
+            return treeString;
+        }
+        treeString = treeAsString(node.right, treeString, fullHeight);
+        for (int i=0; i < fullHeight - node.height; i++) {
+            treeString = treeString + "   ";
+        }
+        treeString = treeString + node.value + "(" + node.height + ")\n";
+        treeString = treeAsString(node.left, treeString, fullHeight);
+
+        return treeString;
     }
 
     private static final int ALLOWED_IMBALANCE = 1;
@@ -246,4 +262,3 @@ public class AVLTree<E extends Comparable<? super E>> {
      */
     private AvlNode root;
 }
-

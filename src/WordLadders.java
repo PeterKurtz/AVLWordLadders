@@ -1,9 +1,10 @@
 public class WordLadders {
     public static void main(String[] args) {
         testAvlTree();
-        ladderGame();
+        //ladderGame();
     }
-
+    //Testing Purposes
+    /*
     private static void ladderGame() {
         LadderGame gamePriority = new LadderGamePriority("dictionary.txt");
         LadderGame gameExhaustive = new LadderGameExhaustive("dictionary.txt");
@@ -39,24 +40,27 @@ public class WordLadders {
         gameExhaustive.play("stone", "money");
         gamePriority.play("stone", "money");
     }
+    */
+
 
     public static void testAvlTree() {
         AVLTree<Integer> primeTree = new AVLTree<>();
         AVLTree<Dwarf> dwarfTree = new AVLTree<>();
 
         String[] nameList = {"Snowflake", "Sneezy", "Doc", "Grumpy", "Bashful", "Dopey", "Happy", "Doc", "Grumpy", "Bashful", "Doc", "Grumpy", "Bashful"};
-        for (var name : nameList) {
+        for (String name : nameList) { //changed var to String
             dwarfTree.insert(new Dwarf(name));
         }
 
         Integer[] primeList = { 1, 2, 3, 5, 7, 11, 13, 17, 23, 29, 31, 37, 43};
-        for (var number : primeList) {
+        for (int number : primeList) { //changed var to int
             primeTree.insert(number);
         }
 
         primeTree.printTree("Prime Tree");
         dwarfTree.printTree( "Dwarf Tree" );
 
+        /*
         System.out.println("\n\n-- Calling deleteMin on primeTree --");
         primeTree.deleteMin();
         primeTree.printTree("The Tree after deleteMin");
@@ -69,10 +73,11 @@ public class WordLadders {
             System.out.printf("%s\n", dwarfTree.deleteMin());
         }
         System.out.println("-- Calling deleteMin on primeTree until it is empty");
+
         while (!primeTree.isEmpty()) {
-            var max = primeTree.findMax();
+            int max = primeTree.findMax(); //changed var to int
             System.out.printf("%d[%d] ", primeTree.deleteMin(), max);
         }
-        System.out.println();
+        System.out.println();*/
     }
 }
