@@ -23,12 +23,19 @@ public class AVLTree<E extends Comparable<? super E>> {
     }
 
     public E deleteMin() {
+        AvlNode min = new AvlNode (findMin(), null, null);
         root = deleteMinRecursion(root);
-        return findMin();
+        return min.value;
     }
 
     private AvlNode deleteMinRecursion(AvlNode tree) {
-        if (tree.left.left != null){
+        if (tree.left == null && tree.right != null) {
+            tree = tree.right;
+        }
+        else if (tree.left == null && tree.right == null) {
+            return null;
+        }
+        else if (tree.left.left != null){
             tree.left = deleteMinRecursion(tree.left);
         }
         else {
