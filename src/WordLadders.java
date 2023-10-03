@@ -1,26 +1,26 @@
 public class WordLadders {
     public static void main(String[] args) {
-        testAvlTree();
+        //testAvlTree();
         ladderGame();
     }
-    //Testing Purposes
 
     private static void ladderGame() {
-        //LadderGame gamePriority = new LadderGamePriority("dictionary.txt");
+        LadderGame gamePriority = new LadderGamePriority("dictionary.txt");
         LadderGame gameExhaustive = new LadderGameExhaustive("dictionary.txt");
 
         gameExhaustive.play("kiss", "woof");
-        //gamePriority.play("kiss", "woof");
+        gamePriority.play("kiss", "woof");
         System.out.println();
 
-        gameExhaustive.play("rock", "numb");
+        //gameExhaustive.play("rock", "numb");
         //gamePriority.play("rock", "numb");
-        System.out.println();
+        //System.out.println();
 
         gameExhaustive.play("rums", "numb");
-       // gamePriority.play("rums", "numb");
+       gamePriority.play("rums", "numb");
         System.out.println();
 
+        /*
         gameExhaustive.play("jura", "such");
         //gamePriority.play("jura", "such");
         System.out.println();
@@ -38,7 +38,7 @@ public class WordLadders {
         System.out.println();
 
         gameExhaustive.play("stone", "money");
-        //gamePriority.play("stone", "money");
+        //gamePriority.play("stone", "money");*/
     }
 
 

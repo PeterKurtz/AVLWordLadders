@@ -6,6 +6,7 @@ abstract class LadderGame {
 
     ArrayList<ArrayList<String>> orderedWords = new ArrayList<>();
 
+
     public LadderGame(String dictionaryFile) {
         readDictionary(dictionaryFile);
     }
@@ -37,6 +38,8 @@ abstract class LadderGame {
             System.out.println("An error occurred trying to read the dictionary.txt: " + ex);
         }
     }
+
+
 
     public abstract void play(String start, String end);
 }
