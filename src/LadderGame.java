@@ -46,7 +46,5 @@ abstract class LadderGame {
         remOrderedWords.addAll(orderedWords.get(wordLength));
     }
 
-
-
     public abstract void play(String start, String end);
 }

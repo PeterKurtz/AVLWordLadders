@@ -1,6 +1,6 @@
 public class WordLadders {
     public static void main(String[] args) {
-        //testAvlTree();
+        testAvlTree();
         ladderGame();
     }
 
@@ -39,9 +39,19 @@ public class WordLadders {
 
         gameExhaustive.play("stone", "money");
         gamePriority.play("stone", "money");
+
+        /*
+        gameExhaustive.play("ston", "money");
+        gamePriority.play("ston", "money");
+
+        gameExhaustive.play("Stone", "Money");
+        gamePriority.play("Stone", "Money");
+
+        gameExhaustive.play("Sht", "Mpt");
+        gamePriority.play("Sht", "Mpt");*/
+
+
     }
-
-
 
     public static void testAvlTree() {
         AVLTree<Integer> primeTree = new AVLTree<>();
