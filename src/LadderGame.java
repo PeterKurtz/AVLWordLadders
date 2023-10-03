@@ -5,7 +5,7 @@ import java.util.ArrayList;
 abstract class LadderGame {
 
     ArrayList<ArrayList<String>> orderedWords = new ArrayList<>();
-
+    ArrayList<String> remOrderedWords = new ArrayList<>();
 
     public LadderGame(String dictionaryFile) {
         readDictionary(dictionaryFile);
@@ -37,6 +37,13 @@ abstract class LadderGame {
         catch (java.io.IOException ex) {
             System.out.println("An error occurred trying to read the dictionary.txt: " + ex);
         }
+    }
+
+    /*The method resetRemOrderedWords makes the list array remOrderedWords contain only the words of a given length which
+     * will be used to make the word ladder.*/
+    public void resetRemOrderedWords (int wordLength) {
+        remOrderedWords.clear();
+        remOrderedWords.addAll(orderedWords.get(wordLength));
     }
 
 

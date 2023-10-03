@@ -2,8 +2,6 @@ import java.util.ArrayList;
 
 class LadderGameExhaustive extends LadderGame{
 
-    private ArrayList<String> remOrderedWords = new ArrayList<>();
-
     public LadderGameExhaustive(String dictionaryFile) {
         super(dictionaryFile);
     }
@@ -104,13 +102,6 @@ class LadderGameExhaustive extends LadderGame{
         }
 
         return words;
-    }
-
-    /*The method resetRemOrderedWords makes the list array remOrderedWords contain only the words of a given length which
-     * will be used to make the word ladder.*/
-    private void resetRemOrderedWords (int wordLength) {
-        remOrderedWords.clear();
-        remOrderedWords.addAll(orderedWords.get(wordLength));
     }
 
     private boolean diff(String startWord, String dictWord, int lenOfWord) {

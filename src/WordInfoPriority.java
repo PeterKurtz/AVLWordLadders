@@ -1,29 +1,29 @@
 public class WordInfoPriority implements Comparable<WordInfoPriority>{
     private String word;
-    private int moves;
+    private int pastWork;
     private String history;
     private int priority;
 
-    public WordInfoPriority(String word, int moves, int estimatedWork) {
+    public WordInfoPriority(String word, int pastWork, int estimatedWork) {
         this.word = word;
-        this.moves = moves;
+        this.pastWork = pastWork;
         this.history = word;
-        this.priority = moves + estimatedWork;
+        this.priority = pastWork + estimatedWork;
     }
 
-    public WordInfoPriority(String word, int moves, int estimatedWork, String history) {
+    public WordInfoPriority(String word, int pastWork, int estimatedWork, String history) {
         this.word = word;
-        this.moves = moves;
+        this.pastWork = pastWork;
         this.history = history;
-        this.priority = moves + estimatedWork;
+        this.priority = pastWork + estimatedWork;
     }
 
     public String getWord() {
         return this.word;
     }
 
-    public int getMoves() {
-        return this.moves;
+    public int getPastWork() {
+        return this.pastWork;
     }
 
     public String getHistory() {
@@ -50,7 +50,7 @@ public class WordInfoPriority implements Comparable<WordInfoPriority>{
     @Override
     public String toString() {
         return String.format("Word %s Moves %d : History[%s]",
-                word, moves, history);
+                word, pastWork, history);
     }
 }
 
